@@ -4,7 +4,6 @@ pipeline {
       args '-p 3000:3000'
       image 'node'
     }
-
   }
   stages {
     stage('Build') {
