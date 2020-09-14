@@ -18,12 +18,12 @@ pipeline {
         sh 'ls -alh'
       }
     }
-    post {
-        success {
-            mail to: '1024125388@qq.com',
-                 subject: "The pipeline ${currentBuild.fullDisplayName} completed successfully.",
-                 body: "Something is success with ${env.BUILD_URL}"
-        }
+  }
+  post {
+    success {
+      mail to: '1024125388@qq.com',
+           subject: "The pipeline ${currentBuild.fullDisplayName} completed successfully.",
+           body: "Something is success with ${env.BUILD_URL}"
     }
   }
 }
