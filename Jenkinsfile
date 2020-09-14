@@ -18,12 +18,18 @@ pipeline {
         sh 'ls -alh'
       }
     }
+
+    stage('Mail') {
+      steps {
+        mail(subject: 'The pipeline ${currentBuild.fullDisplayName} completed successfully.', body: 'Something is success with ${env.BUILD_URL}', to: '1024125388@qq.com')
+      }
+    }
+
   }
   post {
     success {
-      mail to: '1024125388@qq.com',
-           subject: "The pipeline ${currentBuild.fullDisplayName} completed successfully.",
-           body: "Something is success with ${env.BUILD_URL}"
+      mail(to: '1024125388@qq.com', subject: "The pipeline ${currentBuild.fullDisplayName} completed successfully.", body: "Something is success with ${env.BUILD_URL}")
     }
+
   }
 }
