@@ -19,12 +19,6 @@ pipeline {
       }
     }
 
-    stage('Mail') {
-      steps {
-        mail(subject: 'The pipeline ${currentBuild.fullDisplayName} completed successfully.', body: 'Something is success with ${env.BUILD_URL}', to: '1024125388@qq.com')
-      }
-    }
-
   }
   post {
     success {
