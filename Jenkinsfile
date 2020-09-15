@@ -20,7 +20,7 @@ pipeline {
     stage("SSH"){
         steps{
             echo "====++++executing SSH++++===="
-            sshPublisher(publishers: [sshPublisherDesc(configName: 'wowoqu', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: 'vue2-blueocean-demo', remoteDirectorySDF: false, removePrefix: 'dist', sourceFiles: 'vue2-blueocean-demo_master/dist/**')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+            sshPublisher(publishers: [sshPublisherDesc(configName: 'wowoqu', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: 'vue2-blueocean-demo', remoteDirectorySDF: false, removePrefix: 'dist', sourceFiles: '**/dist/**')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
         }
     }
   }
