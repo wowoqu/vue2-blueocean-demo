@@ -4,7 +4,6 @@ pipeline {
       args '-p 3000:3000'
       image 'node'
     }
-
   }
   stages {
     stage('Build') {
@@ -18,12 +17,11 @@ pipeline {
         sh 'ls -alh'
       }
     }
-
-  }
-  post {
-    success {
-      mail(to: '1024125388@qq.com', subject: "The pipeline ${currentBuild.fullDisplayName} completed successfully.", body: "Something is success with ${env.BUILD_URL}")
+    stage("SSH"){
+        steps{
+            echo "====++++executing SSH++++===="
+            sshPublisher(publishers: [sshPublisherDesc(configName: 'wowoqu', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: 'vue2-blueocean-demo', remoteDirectorySDF: false, removePrefix: 'dist', sourceFiles: 'vue2-blueocean-demo_master/dist/**')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+        }
     }
-
   }
 }
