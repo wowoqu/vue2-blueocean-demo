@@ -17,6 +17,7 @@ pipeline {
         sh 'pwd'
         sh 'ls -alh'
         sh 'git --version'
+        sh 'git log'
       }
     }
 
