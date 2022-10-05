@@ -13,6 +13,7 @@ pipeline {
         echo '-----  test  -----'
         sh 'npm config set registry http://registry.npm.taobao.org'
         sh 'npm install'
+        sh 'export NODE_OPTIONS=--openssl-legacy-provider'
         sh 'npm run build'
         sh 'pwd'
         sh 'ls -alh'
