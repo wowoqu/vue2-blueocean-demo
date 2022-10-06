@@ -32,7 +32,7 @@ pipeline {
               "- 任务: [${currentBuild.displayName}](${env.BUILD_URL})",
               "- 状态: <font color=#00CD00 >成功</font>",
               "- 持续时间: ${currentBuild.durationString}".split("and counting")[0],
-              "- 执行人: ${BUILD_USER} ${env.CHANGE_AUTHOR_DISPLAY_NAME}",
+              "- 执行人: ${env.CHANGE_AUTHOR_DISPLAY_NAME}",
             ]
           )
         }
