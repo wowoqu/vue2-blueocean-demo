@@ -31,9 +31,9 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
-            dingtalk(robot: 'jenkins', atAll: true)
+            dingtalk(robot: '93699c3f-0a3e-4421-a03c-5ce3b4c4991b', atAll: true)
           }
         }
 
