@@ -34,38 +34,40 @@ pipeline {
   }
   post {
     success {
-      dingtalk {
-        robot: "93699c3f-0a3e-4421-a03c-5ce3b4c4991b",
-        type: "ACTION_CARD",
-        atAll: true,
-        // title: "构建成功: ${env.JOB_NAME}",
-        // // messageUrl: "xxxx",
-        // text: [
-        //   "### [${env.JOB_NAME}](${env.JOB_URL}) ",
-        //   "---",
-        //   "- 任务: [${currentBuild.displayName}](${env.BUILD_URL})",
-        //   "- 状态: <font color=#00CD00 >成功</font>",
-        //   "- 持续时间: ${currentBuild.durationString}".split("and counting")[0],
-        //   "- 执行人: ${BUILD_USER}",
-        // ]
-      }
+      dingtalk(robot: "93699c3f-0a3e-4421-a03c-5ce3b4c4991b", type: "ACTION_CARD", atAll: true)
+      // dingtalk {
+      //   robot: "93699c3f-0a3e-4421-a03c-5ce3b4c4991b",
+      //   type: "ACTION_CARD",
+      //   atAll: true,
+      //   // title: "构建成功: ${env.JOB_NAME}",
+      //   // // messageUrl: "xxxx",
+      //   // text: [
+      //   //   "### [${env.JOB_NAME}](${env.JOB_URL}) ",
+      //   //   "---",
+      //   //   "- 任务: [${currentBuild.displayName}](${env.BUILD_URL})",
+      //   //   "- 状态: <font color=#00CD00 >成功</font>",
+      //   //   "- 持续时间: ${currentBuild.durationString}".split("and counting")[0],
+      //   //   "- 执行人: ${BUILD_USER}",
+      //   // ]
+      // }
     }
     failure {
-      dingtalk {
-        robot: "93699c3f-0a3e-4421-a03c-5ce3b4c4991b",
-        type: "ACTION_CARD",
-        atAll: true,
-        // title: "构建失败: ${env.JOB_NAME}",
-        // // messageUrl: "xxxx",
-        // text: [
-        //   "### [${env.JOB_NAME}](${env.JOB_URL}) ",
-        //   "---",
-        //   "- 任务: [${currentBuild.displayName}](${env.BUILD_URL})",
-        //   "- 状态: <font color=#EE0000 >失败</font>",
-        //   "- 持续时间: ${currentBuild.durationString}".split("and counting")[0],
-        //   "- 执行人: ${BUILD_USER}",
-        // ]
-      }
+      dingtalk(robot: "93699c3f-0a3e-4421-a03c-5ce3b4c4991b", type: "ACTION_CARD", atAll: true)
+      // dingtalk {
+      //   robot: "93699c3f-0a3e-4421-a03c-5ce3b4c4991b",
+      //   type: "ACTION_CARD",
+      //   atAll: true,
+      //   // title: "构建失败: ${env.JOB_NAME}",
+      //   // // messageUrl: "xxxx",
+      //   // text: [
+      //   //   "### [${env.JOB_NAME}](${env.JOB_URL}) ",
+      //   //   "---",
+      //   //   "- 任务: [${currentBuild.displayName}](${env.BUILD_URL})",
+      //   //   "- 状态: <font color=#EE0000 >失败</font>",
+      //   //   "- 持续时间: ${currentBuild.durationString}".split("and counting")[0],
+      //   //   "- 执行人: ${BUILD_USER}",
+      //   // ]
+      // }
     }
   }
 }
